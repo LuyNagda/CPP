@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 14:15:38 by lunagda           #+#    #+#             */
-/*   Updated: 2024/02/01 14:30:08 by lunagda          ###   ########.fr       */
+/*   Created: 2024/02/01 14:15:47 by lunagda           #+#    #+#             */
+/*   Updated: 2024/02/01 14:32:54 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie	*zombieHorde(int N, std::string name);
-
-int	main(void)
+Zombie	*zombieHorde(int N, std::string name)
 {
-	int	size;
+	Zombie *horde = new Zombie[N];
 
-	size = 20;
-	Zombie	*horde = zombieHorde(size, "OK");
-	for (int i = 0; i < size; i++)
-		horde[i].announce();
-	delete [] horde;
+	for (int i = 0; i < N; i++)
+		horde[i].setName(name);
+	return (horde);
 }

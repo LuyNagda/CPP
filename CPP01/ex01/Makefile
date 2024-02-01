@@ -5,30 +5,30 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/27 15:04:23 by lunagda           #+#    #+#              #
-#    Updated: 2024/02/01 13:29:40 by lunagda          ###   ########.fr        #
+#    Created: 2024/02/01 14:15:41 by lunagda           #+#    #+#              #
+#    Updated: 2024/02/01 14:21:09 by lunagda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	phonebook
-CC				=	c++
-FLAGS			=	-Wall -Wextra -Werror -std=c++98
-RM				=	rm -rf
-SOURCE			=	main.cpp		\
-					PhoneBook.cpp	\
-					Contact.cpp		\
-					PhoneBook_utils.cpp
+SRC = main.cpp Zombie.cpp ZombieHorde.cpp
+OBJ = $(SRC:.cpp=.o)
+CC = g++
+RM = rm -f
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+
+NAME = zombie
 
 all: $(NAME)
 
-$(NAME):	$(SOURCE)
-	@ $(CC) $(FLAGS) $(SOURCE) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	@$(RM) $(NAME)
+	$(RM) $(OBJ)
 
 fclean: clean
+	$(RM) $(NAME)
 
-re: clean all
+re: fclean $(NAME)
 
 .PHONY: all clean fclean re

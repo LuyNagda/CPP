@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 14:15:38 by lunagda           #+#    #+#             */
-/*   Updated: 2024/02/01 14:30:08 by lunagda          ###   ########.fr       */
+/*   Created: 2024/02/01 13:57:27 by lunagda           #+#    #+#             */
+/*   Updated: 2024/02/01 14:08:18 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie	*zombieHorde(int N, std::string name);
-
-int	main(void)
+Zombie	*newZombie(std::string name)
 {
-	int	size;
-
-	size = 20;
-	Zombie	*horde = zombieHorde(size, "OK");
-	for (int i = 0; i < size; i++)
-		horde[i].announce();
-	delete [] horde;
+	return (new Zombie(name));
 }

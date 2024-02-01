@@ -5,22 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 14:15:38 by lunagda           #+#    #+#             */
-/*   Updated: 2024/02/01 14:30:08 by lunagda          ###   ########.fr       */
+/*   Created: 2024/01/03 12:50:55 by lunagda           #+#    #+#             */
+/*   Updated: 2024/02/01 13:41:53 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-Zombie	*zombieHorde(int N, std::string name);
+#include "PhoneBook_utils.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 int	main(void)
 {
-	int	size;
-
-	size = 20;
-	Zombie	*horde = zombieHorde(size, "OK");
-	for (int i = 0; i < size; i++)
-		horde[i].announce();
-	delete [] horde;
+	PhoneBook	ph1;
+	std::string	str;
+	
+	while (str != "EXIT")
+	{
+		std::cout << "Enter a command > ";
+		std::getline(std::cin, str);
+		if (str == "ADD")
+			ph1.add();
+		else if (str == "SEARCH")
+			ph1.search();
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			return (0);
+		}
+	}
+	return (0);
 }

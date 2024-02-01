@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 14:15:38 by lunagda           #+#    #+#             */
-/*   Updated: 2024/02/01 14:30:08 by lunagda          ###   ########.fr       */
+/*   Created: 2024/02/01 14:39:59 by lunagda           #+#    #+#             */
+/*   Updated: 2024/02/01 16:11:03 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
 
-Zombie	*zombieHorde(int N, std::string name);
+# define WEAPON_HPP
 
-int	main(void)
+# include <iostream>
+
+class Weapon
 {
-	int	size;
+	private:
+		std::string _type;
+	public:
+		Weapon(std::string type);
+		~Weapon(void);
+		const std::string	&getType(void);
+		void				setType(std::string type);
+};
 
-	size = 20;
-	Zombie	*horde = zombieHorde(size, "OK");
-	for (int i = 0; i < size; i++)
-		horde[i].announce();
-	delete [] horde;
-}
+#endif

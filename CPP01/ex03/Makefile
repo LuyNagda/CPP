@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/01 13:56:38 by lunagda           #+#    #+#              #
-#    Updated: 2024/02/01 14:11:14 by lunagda          ###   ########.fr        #
+#    Created: 2024/02/01 14:39:55 by lunagda           #+#    #+#              #
+#    Updated: 2024/02/01 15:59:06 by lunagda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = zombie
+NAME = weapon
 
 all: $(NAME)
 

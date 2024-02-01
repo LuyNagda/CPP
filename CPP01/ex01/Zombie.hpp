@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 14:15:38 by lunagda           #+#    #+#             */
-/*   Updated: 2024/02/01 14:30:08 by lunagda          ###   ########.fr       */
+/*   Created: 2024/02/01 14:15:45 by lunagda           #+#    #+#             */
+/*   Updated: 2024/02/01 14:29:11 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
 
-Zombie	*zombieHorde(int N, std::string name);
+# define ZOMBIE_HPP
 
-int	main(void)
-{
-	int	size;
+# include <iostream>
+# include <algorithm>
 
-	size = 20;
-	Zombie	*horde = zombieHorde(size, "OK");
-	for (int i = 0; i < size; i++)
-		horde[i].announce();
-	delete [] horde;
-}
+class	Zombie{
+	private:
+		std::string	_name;
+	public:
+		Zombie(std::string name);
+		Zombie(void);
+		~Zombie(void);
+		void	announce(void);
+		void	setName(std::string name);
+};
+
+Zombie	*newZombie(std::string name);
+
+void	randomChump(std::string name);
+
+#endif

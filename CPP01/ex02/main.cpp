@@ -5,22 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 14:15:38 by lunagda           #+#    #+#             */
-/*   Updated: 2024/02/01 14:30:08 by lunagda          ###   ########.fr       */
+/*   Created: 2024/02/01 14:33:46 by lunagda           #+#    #+#             */
+/*   Updated: 2024/02/01 14:38:15 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-Zombie	*zombieHorde(int N, std::string name);
-
-int	main(void)
+int	main()
 {
-	int	size;
+	std::string	string = "HI THIS IS BRAIN";
+	std::string	*stringPTR;
 
-	size = 20;
-	Zombie	*horde = zombieHorde(size, "OK");
-	for (int i = 0; i < size; i++)
-		horde[i].announce();
-	delete [] horde;
+	stringPTR = &string; 
+	std::string	&stringREF = string;
+	std::cout << "string address: " << &string << std::endl;
+	std::cout << "stringPTR address: " << stringPTR << std::endl;
+	std::cout << "stringREF address: " << &stringREF << std::endl;
+	std::cout << "string string: " << string << std::endl;
+	std::cout << "stringPTR string: " << *stringPTR << std::endl;
+	std::cout << "stringREF string: " << stringREF << std::endl;
 }
