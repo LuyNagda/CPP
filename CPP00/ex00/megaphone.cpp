@@ -6,11 +6,12 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 15:04:25 by lunagda           #+#    #+#             */
-/*   Updated: 2023/12/27 18:17:43 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/03/04 16:47:16 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
 int	main(int argc, char **argv)
 {
@@ -20,8 +21,10 @@ int	main(int argc, char **argv)
 	{
 		for (int i = 1; argv[i]; i++)
 		{
-			for (int j = 0; argv[i][j]; j++)
-				std::cout << (char) toupper(argv[i][j]);
+			std::string	arg = argv[i];
+			for (std::string::size_type j = 0; j < arg.length(); ++j)
+				arg[j] = std::toupper(arg[j]);
+			std::cout << arg;
 			if (i < argc - 1)
 				std::cout << ' ';
 		}
