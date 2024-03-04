@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 12:49:41 by lunagda           #+#    #+#             */
-/*   Updated: 2024/02/01 13:46:09 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/03/04 16:15:50 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,21 +46,21 @@ void	PhoneBook::add(void)
 	{
 		std::cout << "Enter " << this->_contacts[this->_index % 8].get_fname() << "'s last name: ";
 		if (std::getline(std::cin, str) && str != "")
-			this->_contacts[this->_index & 8].set_lname(str);
+			this->_contacts[this->_index % 8].set_lname(str);
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
 	{
 		std::cout << "Enter " << this->_contacts[this->_index % 8].get_fname() << "'s nick name: ";
 		if (std::getline(std::cin, str) && str != "")
-			this->_contacts[this->_index & 8].set_nick(str);
+			this->_contacts[this->_index % 8].set_nick(str);
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
 	{
 		std::cout << "Enter " << this->_contacts[this->_index % 8].get_fname() << "'s phone number: ";
 		if (std::getline(std::cin, str) && str != "")
-			this->_contacts[this->_index & 8].set_phone_num(str);
+			this->_contacts[this->_index % 8].set_phone_num(str);
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
@@ -68,7 +68,7 @@ void	PhoneBook::add(void)
 		std::cout << "Enter " << this->_contacts[this->_index % 8].get_fname() << "'s darkest secret: ";
 		if (std::getline(std::cin, str) && str != "")
 		{
-			this->_contacts[this->_index & 8].set_secret(str);
+			this->_contacts[this->_index % 8].set_secret(str);
 			std::cout << this->_contacts[this->_index % 8].get_fname() << " successfully added to phonebook [" << this->_index % 8 + 1 << "/8]" << std::endl;
 		}
 	}
