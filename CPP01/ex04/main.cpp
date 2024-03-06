@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:44:17 by lunagda           #+#    #+#             */
-/*   Updated: 2024/03/04 17:16:42 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/03/06 16:55:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,39 +16,30 @@
 
 void	replace_string(const std::string filename, const std::string s1, const std::string s2)
 {
-	std::ifstream file(filename.c_str());
-	std::string newfilename = filename + ".replace";
-	std::ofstream outputFile(newfilename.c_str());
+	std::ifstream	file(filename.c_str());
+	std::string		newfilename = filename + ".replace";
+	std::ofstream	outputFile(newfilename.c_str());
+	std::string		line;
+	std::string		suffix;
+	size_t			pos;
 
 	if (!file.is_open() || !outputFile.is_open())
 		std::cerr << "Error opening file." << std::endl;
 	else
 	{
-		char c;
-        while (file.get(c)) 
+		while (getline(file, line))
 		{
-            if (c == '\n') {
-                outputFile << c;
-            } else if (c == ' ') {
-                outputFile << c;
-            } else {
-                std::string word;
-                word += c;
-                while (file.get(c) && c != ' ' && c != '\n') {
-                    word += c;
-                }
-                if (word == s1) {
-                    outputFile << s2;
-                } else {
-                    outputFile << word;
-                }
-                if (c == ' ') {
-                    outputFile << c;
-                }
-                if (c == '\n') {
-                    outputFile << c;
-                }
-            }
+			int	last = 0;
+			while ((pos = line.find(s1, last)) != std::string::npos)
+			{
+				suffix = line.substr(pos + s1.size());
+				line.erase(pos);
+				line += s2 + suffix;
+				last = pos + s2.size();
+			}
+			outputFile << line;
+			if (!file.eof())
+				outputFile << std::endl;
 		}
 		file.close();
 		outputFile.close();
