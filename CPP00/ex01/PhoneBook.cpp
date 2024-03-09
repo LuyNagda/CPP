@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
+/*   By: luynagda <luynagda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 12:49:41 by lunagda           #+#    #+#             */
-/*   Updated: 2024/03/04 16:15:50 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/03/09 07:57:36 by luynagda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,6 @@ void	PhoneBook::print(Contact contact)
 	std::cout << "Nick name: " << contact.get_nick() << std::endl;
 	std::cout << "Phone number: " << contact.get_phone_num() << std::endl;
 	std::cout << "Darkest secret: " << contact.get_secret() << std::endl;
-}
-
-Contact PhoneBook::get_contact(int index)
-{
-	return (this->_contacts[index % 8]);
 }
 
 void	PhoneBook::search(void)
