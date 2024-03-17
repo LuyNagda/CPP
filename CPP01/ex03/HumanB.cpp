@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
+/*   By: luynagda <luynagda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:39:48 by lunagda           #+#    #+#             */
-/*   Updated: 2024/02/01 16:04:56 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/03/17 10:15:02 by luynagda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ HumanB::~HumanB(void)
 
 void	HumanB::attack(void)
 {
-	
+	if (this->_weapon == NULL)
+	{
+		std::cout << this->_name << " has no weapon" << std::endl;
+		return ;
+	}
 	std::cout << this->_name << " attacks with his " << \
 		this->_weapon->getType() << std::endl;
 }
