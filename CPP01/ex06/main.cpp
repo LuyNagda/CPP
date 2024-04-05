@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luynagda <luynagda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 10:26:45 by luynagda          #+#    #+#             */
-/*   Updated: 2024/03/17 10:32:27 by luynagda         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:45:34 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,19 @@ void	harl_switch(char *argv, Harl &harl)
 	{
 		case 0:
 			harl.complain("DEBUG");
+			harl.complain("INFO");
+			harl.complain("WARNING");
+			harl.complain("ERROR");
+			break;
 		case 1:
 			harl.complain("INFO");
+			harl.complain("WARNING");
+			harl.complain("ERROR");
+			break;
 		case 2:
 			harl.complain("WARNING");
+			harl.complain("ERROR");
+			break;
 		case 3:
 			harl.complain("ERROR");
 			break;
