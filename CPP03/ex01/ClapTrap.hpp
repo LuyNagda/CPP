@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 16:42:01 by lunagda           #+#    #+#             */
-/*   Updated: 2024/04/10 15:41:50 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/04/11 11:51:09 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ClapTrap
 		ClapTrap(std::string name);
 		~ClapTrap();
 		ClapTrap &operator=(const ClapTrap &copy);
-		void attack(const std::string &target);
+		virtual void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 };
