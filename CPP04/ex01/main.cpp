@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:22:11 by lunagda           #+#    #+#             */
-/*   Updated: 2024/04/11 12:12:16 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/04/11 12:52:48 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ int main()
 	wrong2->makeSound(); //will output the wrongcat sound!
 	meta->makeSound(); //will output the animal sound!
 	wrong->makeSound(); //will output the wronganimal sound!
-	
+
+	delete i;
+	delete j;
+	delete meta;
+	delete wrong;
+	delete wrong2;
+
 	return 0;
 }
