@@ -6,7 +6,7 @@
 #    By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/10 16:18:26 by lunagda           #+#    #+#              #
-#    Updated: 2024/04/11 12:32:55 by lunagda          ###   ########.fr        #
+#    Updated: 2024/04/13 14:53:08 by lunagda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g3
 
 NAME = Animal
 

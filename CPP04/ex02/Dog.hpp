@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:43:26 by lunagda           #+#    #+#             */
-/*   Updated: 2024/04/11 12:31:30 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/04/13 15:22:09 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 	class Dog : public Animal
 	{
 		private:
-			Brain *brain;
+			Brain *_brain;
 		public:
 			Dog();
 			Dog(const Dog &copy);
