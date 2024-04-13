@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 16:41:59 by lunagda           #+#    #+#             */
-/*   Updated: 2024/04/11 13:44:55 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/04/13 13:27:30 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &copy)
 
 void ClapTrap::attack(const std::string &target)
 {
-	if (this->_energyPoints <= 0)
-	{
-		std::cout << "ClapTrap " << this->_name << " is out of energy!" << std::endl;
-		return ;
-	}
 	if (this->_hitPoints <= 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " is dead!" << std::endl;
+		return ;
+	}
+	if (this->_energyPoints <= 0)
+	{
+		std::cout << "ClapTrap " << this->_name << " is out of energy!" << std::endl;
 		return ;
 	}
 	this->_energyPoints -= 1;
@@ -73,14 +73,14 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_energyPoints <= 0)
-	{
-		std::cout << this->_name << " is out of energy!" << std::endl;
-		return ;
-	}
 	if (this->_hitPoints <= 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " is dead!" << std::endl;
+		return ;
+	}
+	if (this->_energyPoints <= 0)
+	{
+		std::cout << this->_name << " is out of energy!" << std::endl;
 		return ;
 	}
 	this->_energyPoints -= 1;
