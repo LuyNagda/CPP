@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
+/*   By: luynagda <luynagda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:22:40 by lunagda           #+#    #+#             */
-/*   Updated: 2024/04/15 13:26:39 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/04/15 19:41:19 by luynagda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 	{
 		protected:
 			std::string _type;
-			Animal();
 		public:
+			Animal();
 			Animal(const Animal &copy);
 			Animal(std::string type);
 			virtual ~Animal();
