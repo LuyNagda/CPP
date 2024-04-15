@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:22:40 by lunagda           #+#    #+#             */
-/*   Updated: 2024/04/13 16:20:45 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/04/15 13:26:39 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@
 			virtual ~Animal();
 			Animal &operator=(const Animal &copy);
 			std::string getType() const;
-			virtual void makeSound() const;
+			virtual void makeSound() const = 0;
 	};
 #endif

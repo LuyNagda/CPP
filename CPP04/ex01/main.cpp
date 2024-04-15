@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:22:11 by lunagda           #+#    #+#             */
-/*   Updated: 2024/04/13 16:14:13 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/04/15 13:24:52 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,27 @@
 
 int main()
 {
-	//const Animal* meta = new Animal();
-	Dog* k = new Dog();
-	Dog* j = new Dog();
-	//const Animal* i = new Cat();
-	//const WrongAnimal* wrong = new WrongAnimal();
-	//const WrongAnimal* wrong2 = new WrongCat();
 	
-	//std::cout << "Should be a cat: " << i->getType() << " " << std::endl;
-	//std::cout << "Should be a dog: " << j->getType() << " " << std::endl;
-	//std::cout << "Should be a wrongcat: " << wrong2->getType() << " " << std::endl;
-	//std::cout << "Should be a empty cause it's an animal: " << meta->getType() << " " << std::endl;
-	//std::cout << "Should be a empty cause it's an wronganimal: " << wrong->getType() << " " << std::endl;
-	
-	//i->makeSound(); //will output the cat sound!
-	//j->makeSound(); //will output the dog sound!
-	//wrong2->makeSound(); //will output the wrongcat sound!
-	//meta->makeSound(); //will output the animal sound!
-	//wrong->makeSound(); //will output the wronganimal sound!
+	const Animal* j = new Dog();
+    const Animal* i = new Cat();
 
-	std::cout << "////" << std::endl;
-	*k = *j;
-	delete k;
-	delete j;
-	//delete i;
-	//delete j;
-	//delete meta;
-	//delete wrong;
-	//delete wrong2;
+    delete j;
+    delete i;
+
+	Dog basic;
+    {
+        Dog tmp = basic;
+    }
+
+    const Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
+    for ( int i = 0; i < 4; i++ ) {
+        delete animals[i];
+    }
+
+	Cat basic2;
+	{
+		Cat tmp = basic2;
+	}
 
 	return 0;
 }
