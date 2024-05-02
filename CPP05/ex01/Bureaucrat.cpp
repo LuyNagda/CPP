@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:16:50 by lunagda           #+#    #+#             */
-/*   Updated: 2024/05/02 12:28:34 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/05/02 12:25:18 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & obj)
 {
 	if (this == &obj)
 		return (*this);
+	//this->name = obj.name;
 	this->grade = obj.grade;
 	return (*this);
 }
@@ -75,4 +76,17 @@ std::ostream & operator<<(std::ostream & os, Bureaucrat const & obj)
 {
 	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << std::endl;
 	return (os);
+}
+
+void Bureaucrat::signForm(Form & obj)
+{
+	try {
+		obj.beSigned(*this);
+		if (obj.getSigned() == true)
+			std::cout << this->getName() << " signed " << obj.getName() << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << this->getName() << " cannot sign " << obj.getName() << " because " << e.what() << std::endl;
+	}
 }
