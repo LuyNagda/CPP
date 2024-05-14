@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:16:50 by lunagda           #+#    #+#             */
-/*   Updated: 2024/05/14 16:06:11 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/05/14 16:43:21 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,18 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low");
+}
+
+void Bureaucrat::executeForm(Form const & form)
+{
+	try {
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << this->getName() << " cannot execute " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 std::ostream & operator<<(std::ostream & os, Bureaucrat const & obj)
