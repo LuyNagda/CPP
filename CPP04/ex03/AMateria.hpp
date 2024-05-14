@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:01:24 by lunagda           #+#    #+#             */
-/*   Updated: 2024/05/03 16:13:01 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/05/14 14:07:39 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include "ICharacter.hpp"
 
 class ICharacter;
 

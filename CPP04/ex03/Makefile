@@ -6,20 +6,20 @@
 #    By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/10 16:18:26 by lunagda           #+#    #+#              #
-#    Updated: 2024/04/13 14:53:08 by lunagda          ###   ########.fr        #
+#    Updated: 2024/05/14 14:10:28 by lunagda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g3
 
-NAME = Animal
+NAME = Materia
 
-HEADER = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
+HEADER = AMateria.hpp Character.hpp Cure.hpp Ice.hpp MateriaSource.hpp
 
 all: $(NAME)
 

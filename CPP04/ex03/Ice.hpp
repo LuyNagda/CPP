@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 16:55:26 by lunagda           #+#    #+#             */
-/*   Updated: 2024/04/10 16:58:47 by lunagda          ###   ########.fr       */
+/*   Created: 2024/05/13 13:30:33 by lunagda           #+#    #+#             */
+/*   Updated: 2024/05/13 13:38:25 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
-	# define WRONGCAT_HPP
-	#include "WrongAnimal.hpp"
+# include "AMateria.hpp"
 
-	class WrongCat : public WrongAnimal
-	{
-		public:
-			WrongCat();
-			WrongCat(const WrongCat &copy);
-			WrongCat &operator=(const WrongCat &copy);
-			~WrongCat();
-			void makeSound() const;
-	};
+class Ice : public AMateria
+{
+	public:
+		Ice();
+		Ice(const Ice &copy);
+		virtual ~Ice();
+		Ice &operator=(const Ice &copy);
+
+		AMateria* clone() const;
+		std::string const &getType() const;
+		void use(ICharacter &target);
+	private:
+		std::string _type;
+};
+
 #endif
