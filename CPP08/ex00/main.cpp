@@ -5,43 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 11:30:15 by lunagda           #+#    #+#             */
-/*   Updated: 2024/05/21 12:05:09 by lunagda          ###   ########.fr       */
+/*   Created: 2024/05/21 12:44:26 by lunagda           #+#    #+#             */
+/*   Updated: 2024/05/21 14:28:45 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "easyfind.hpp"
 
-int	main()
+int main(void)
 {
+	std::vector<int> vec;
+	vec.push_back(1);
+	vec.push_back(2);
+	vec.push_back(3);
+	vec.push_back(4);
+	vec.push_back(5);
 	try
 	{
-		Bureaucrat b1("b1", 1);
-		std::cout << b1;
-		b1.decrementGrade();
-		std::cout << b1;
-		b1.incrementGrade();
-		b1.incrementGrade();
-		std::cout << b1;
+		std::vector<int>::iterator it = easyfind(vec, 3);
+		std::cout << *it << std::endl;
+		std::vector<int>::iterator fit = easyfind(vec, 52);
+		std::cout << *fit << std::endl;
 	}
-	catch (std::exception & e)
+	catch(const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << "Error: could not find" << '\n';
 	}
-	try
-	{
-		Bureaucrat b2;
-		std::cout << b2;
-		for (int i = 0; i < 50; i++)
-			b2.incrementGrade();
-		std::cout << b2;
-		for (int i = 0; i < 150; i++)
-			b2.decrementGrade();
-		std::cout << b2;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	
+	
 	return (0);
 }
