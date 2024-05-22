@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:39:17 by lunagda           #+#    #+#             */
-/*   Updated: 2024/05/21 16:17:40 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/05/22 11:13:58 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,4 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 		throw (Form::FormNotSignedException());
 	else
 		std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox\n";
-}
-
-Form *PresidentialPardonForm::makeForm(Form *form, std::string const name, std::string const target)
-{
-	if (form == NULL && name == "presidential pardon")
-		return (new PresidentialPardonForm(target));
-	return (form);
 }

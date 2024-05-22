@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:35:13 by lunagda           #+#    #+#             */
-/*   Updated: 2024/05/21 16:17:13 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/05/22 11:13:52 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,4 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 		std::cout << "BzzzzzzzzzzzzzZZZ" << this->getTarget() << " has been robotomized successfully\n";
 	else
 		std::cout << "Robotomy of " << this->getTarget() << " failed\n";
-}
-
-Form *RobotomyRequestForm::makeForm(Form *form, std::string const name, std::string const target)
-{
-	if (form == NULL && name == "robotomy request")
-		return (new RobotomyRequestForm(target));
-	return (form);
 }

@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 11:34:30 by lunagda           #+#    #+#             */
-/*   Updated: 2024/05/21 16:18:49 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/05/22 11:14:13 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,14 +104,4 @@ std::ostream & operator<<(std::ostream & os, Form const & obj)
 		os << "not signed" << " and requires grade " << obj.getGradeToSign() << " to sign and grade " << obj.getGradeToExecute() << " to execute";
 	os << std::endl;
 	return (os);
-}
-
-Form *Form::makeForm(std::string const name, std::string const target)
-{
-	Form *form = NULL;
-
-	form = ShrubberyCreationForm::makeForm(form, name, target);
-	form = RobotomyRequestForm::makeForm(form, name, target);
-	form = PresidentialPardonForm::makeForm(form, name, target);
-	return (form);
 }

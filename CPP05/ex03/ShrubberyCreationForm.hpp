@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:44:58 by lunagda           #+#    #+#             */
-/*   Updated: 2024/05/21 16:09:28 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/05/22 11:13:41 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &copy);
 		std::string	getTarget(void) const;
 		void execute(Bureaucrat const &executor) const;
-		static Form *makeForm(Form *form, std::string const name, std::string const target);
 };
 
 std::ostream &operator<<(std::ostream &o, ShrubberyCreationForm *a);

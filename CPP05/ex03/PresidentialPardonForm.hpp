@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:39:26 by lunagda           #+#    #+#             */
-/*   Updated: 2024/05/21 16:17:16 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/05/22 11:13:55 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class PresidentialPardonForm: public Form
 		~PresidentialPardonForm();
 		void execute(Bureaucrat const &executor) const;
 		std::string getTarget(void) const;
-		static Form *makeForm(Form *form, std::string const name, std::string const target);
 };
 
 #endif

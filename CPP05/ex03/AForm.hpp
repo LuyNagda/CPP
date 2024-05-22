@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 11:34:34 by lunagda           #+#    #+#             */
-/*   Updated: 2024/05/21 16:08:52 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/05/22 11:14:10 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ class Form
 		int getGradeToExecute() const;
 		void beSigned(Bureaucrat const & obj);
 		virtual void execute(Bureaucrat const &executor) const = 0;
-		static Form *makeForm(std::string const name, std::string const target);
 		class GradeTooHighException : public std::exception
 		{
 			public:

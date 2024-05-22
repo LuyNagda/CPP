@@ -6,7 +6,7 @@
 /*   By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:29:17 by lunagda           #+#    #+#             */
-/*   Updated: 2024/05/21 16:20:20 by lunagda          ###   ########.fr       */
+/*   Updated: 2024/05/22 11:13:45 by lunagda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,4 @@ std::ostream &operator<<(std::ostream &o, ShrubberyCreationForm *a)
 	"\nis signed:\t" << a->getSigned() <<
 	std::endl;
 	return (o);
-}
-
-Form *ShrubberyCreationForm::makeForm(Form *form, std::string const name, std::string const target)
-{
-	if (form == NULL && name == "shrubbery creation")
-		return (new ShrubberyCreationForm(target));
-	return (form);
 }
