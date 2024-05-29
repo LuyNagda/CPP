@@ -6,23 +6,23 @@
 #    By: lunagda <lunagda@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/23 16:13:29 by lunagda           #+#    #+#              #
-#    Updated: 2024/05/23 16:13:36 by lunagda          ###   ########.fr        #
+#    Updated: 2024/05/28 13:28:04 by lunagda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp RPN.cpp
+SRC = main.cpp PmergeMe.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-NAME = RPN
+NAME = PmergeMe
 
-HEADER = RPN.hpp
+HEADER = PmergeMe.hpp
 
 all: $(NAME)
 
-%.o: %.cpp $(HEADER)
+%.o: %.cpp
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ) $(HEADER)
